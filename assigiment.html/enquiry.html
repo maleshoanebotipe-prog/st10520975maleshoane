@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Ask Happy Place about homemade food orders in Dealesville. Choose a product, quantity and date to get an instant cost and availability quote.">
+    <meta name="keywords"
+        content="food order enquiry, order homemade food, food quote, catering enquiry, Happy Place order, Dealesville">
+    <title>Order Enquiry &amp; Quote | Happy Place Dealesville</title>
+    <link rel="canonical" href="https://happy-place-dealesville.netlify.app/enquiry.html">
+
+    <!-- Open Graph (social media previews) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Happy Place">
+    <meta property="og:title" content="Order Enquiry &amp; Quote | Happy Place Dealesville">
+    <meta property="og:description"
+        content="Ask Happy Place about homemade food orders in Dealesville. Choose a product, quantity and date to get an instant cost and availability quote.">
+    <meta property="og:url" content="https://happy-place-dealesville.netlify.app/enquiry.html">
+    <meta property="og:image" content="https://happy-place-dealesville.netlify.app/images/full-plate-640.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a class="logo" href="index.html">Happy Place</a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a aria-current="page" href="enquiry.html">Enquiry</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <section class="intro">
+            <h1>Make an Enquiry</h1>
+            <p>Choose a product, how many you need and when. We will show you the cost and availability straight away.
+            </p>
+        </section>
+
+        <section class="form-container">
+            <h2>Enquiry Form</h2>
+
+            <form id="enquiry-form" action="#" method="post" novalidate
+                data-endpoint="https://jsonplaceholder.typicode.com/posts">
+
+                <label for="fullName">Full name:</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" autocomplete="name"
+                    maxlength="60" required>
+
+                <label for="email">Email address:</label>
+                <input type="email" id="email" name="email" placeholder="name@example.com" autocomplete="email"
+                    required>
+
+                <label for="phone">Phone number (optional):</label>
+                <input type="tel" id="phone" name="phone" placeholder="083 348 6381" autocomplete="tel" inputmode="tel"
+                    maxlength="16">
+
+                <label for="product">Product of interest:</label>
+                <select id="product" name="product" required>
+                    <option value="">-- Select a product --</option>
+                </select>
+
+                <label for="quantity">Quantity (1 to 50):</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="50" step="1" value="1" required>
+
+                <label for="date">Date needed:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="6" maxlength="500"
+                    placeholder="Tell us what you need (10 to 500 characters)" required></textarea>
+                <span class="char-count" id="message-count"></span>
+
+                <button type="submit">Get my quote</button>
+            </form>
+
+            <p class="form-status" role="status" aria-live="polite"></p>
+            <div class="result-card" id="enquiry-result" aria-live="polite" hidden></div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Happy Place, Dealesville. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>

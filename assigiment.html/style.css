@@ -1,0 +1,1068 @@
+/* =========================================
+   External CSS
+   ========================================= */
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ---------- COLOUR VARIABLES ---------- */
+
+:root {
+    --brown: #6b3e26;
+    --brown-dark: #4d2b1c;
+    --orange: #d9822b;
+    --orange-dark: #a85a05;
+    --orange-light: #f5b15a;
+    --cream: #fdf6ec;
+    --white: #ffffff;
+    --text: #2e2e2e;
+    --border: #eadfd2;
+
+    --shadow: 0 0.35rem 1rem rgba(67, 39, 24, 0.12);
+
+    --radius: 0.65rem;
+}
+
+
+/* ----------  STYLING ---------- */
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+    }
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--cream);
+    color: var(--text);
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+
+/* ---------- IMAGES ---------- */
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* ---------- LINKS ---------- */
+
+a {
+    color: var(--brown);
+}
+
+/* Scoped to main so the logo and nav aren't affected */
+main a:hover {
+    color: var(--orange-dark);
+}
+
+main a:visited {
+    color: var(--brown-dark);
+}
+
+main a:active {
+    color: var(--orange-dark);
+}
+
+
+/* ---------- ACCESSIBILITY ---------- */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 0.2rem solid var(--orange-dark);
+    outline-offset: 0.15rem;
+}
+
+
+/* ---------- SKIP LINK ---------- */
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0.5rem;
+    z-index: 100;
+
+    padding: 0.6rem 1rem;
+
+    background-color: var(--white);
+    color: var(--brown);
+
+    font-weight: 700;
+}
+
+.skip-link:focus {
+    left: 0.5rem;
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.site-header {
+    background-color: var(--brown);
+    color: var(--white);
+    padding: 1rem 5%;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    width: min(100%, 70rem);
+    margin-inline: auto;
+}
+
+
+/* ---------- LOGO ---------- */
+
+.logo {
+    color: var(--white);
+
+    font-size: clamp(1.5rem, 3vw, 1.9rem);
+    font-weight: 700;
+
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+
+/* ---------- NAVIGATION ---------- */
+
+.site-nav ul {
+    display: flex;
+
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    gap: 0.35rem;
+
+    list-style: none;
+}
+
+.site-nav a {
+    display: block;
+
+    padding: 0.45rem 0.65rem;
+
+    border-radius: 0.35rem;
+
+    color: var(--white);
+
+    font-weight: 700;
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: var(--orange-light);
+}
+
+.site-nav a:active {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.site-nav li:last-child a {
+    margin-right: 0;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+   ========================================= */
+
+main {
+    width: min(90%, 70rem);
+
+    margin-inline: auto;
+
+    padding: 1.5rem 0 2rem;
+}
+
+section {
+    margin-block: 1.5rem;
+}
+
+
+/* ---------- CONTENT CARDS ---------- */
+
+.section-card,
+.intro,
+.form-container,
+.contact-container,
+.map-container {
+    padding: clamp(1.25rem, 3vw, 2rem);
+
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+}
+
+
+/* ---------- INTRO ---------- */
+
+.intro {
+    text-align: center;
+}
+
+
+/* =========================================
+   TYPOGRAPHY
+   ========================================= */
+
+h1,
+h2,
+h3 {
+    color: var(--brown);
+    line-height: 1.2;
+}
+
+h1 {
+    margin-bottom: 0.75rem;
+
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+h2 {
+    margin-bottom: 0.75rem;
+
+    font-size: clamp(1.45rem, 3vw, 2rem);
+}
+
+h3 {
+    margin-block: 0.75rem 0.5rem;
+
+    font-size: 1.2rem;
+}
+
+p+p {
+    margin-top: 1rem;
+}
+
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+
+.hero {
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+
+    background-color: var(--orange-dark);
+    color: var(--white);
+
+    border-radius: var(--radius);
+
+    text-align: center;
+
+    box-shadow: var(--shadow);
+}
+
+.hero h1 {
+    color: var(--white);
+}
+
+.hero p {
+    max-width: 52rem;
+
+    margin-inline: auto;
+}
+
+.hero img {
+    width: 100%;
+    max-width: 60rem;
+
+    height: clamp(15rem, 42vw, 22rem);
+
+    margin: 1.25rem auto 0;
+
+    border-radius: var(--radius);
+
+    object-fit: cover;
+}
+
+
+/* =========================================
+   GENERAL GRID
+   ========================================= */
+
+.grid,
+.products,
+.contact-grid {
+    display: grid;
+    gap: 1.25rem;
+}
+
+
+/* ---------- THREE COLUMN GRID ---------- */
+
+.grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+
+/* ---------- GENERAL CARD ---------- */
+
+.card {
+    padding: 1.25rem;
+
+    background-color: var(--cream);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    max-width: 20rem;
+
+    height: 11rem;
+
+    margin-inline: auto;
+
+    border-radius: 0.5rem;
+
+    object-fit: cover;
+}
+
+
+/* =========================================
+   PRODUCTS
+   ========================================= */
+
+.products {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+
+/* ---------- PRODUCT CARD ---------- */
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+
+    padding: 1.25rem;
+
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Structural pseudo-class: alternate card colour */
+.products .product-card:nth-child(even) {
+    background-color: var(--cream);
+}
+
+
+/* ---------- PRODUCT HOVER ---------- */
+
+.product-card:hover {
+    transform: translateY(-0.2rem);
+
+    box-shadow:
+        0 0.6rem 1.4rem rgba(67, 39, 24, 0.17);
+}
+
+
+/* ---------- PRODUCT IMAGE ---------- */
+
+.product-card img {
+    width: 100%;
+
+    height: 14rem;
+
+    border-radius: 0.5rem;
+
+    object-fit: cover;
+}
+
+
+/* ---------- PRODUCT DESCRIPTION ---------- */
+
+.product-card p:not(.price) {
+    flex-grow: 1;
+}
+
+
+/* ---------- PRODUCT PRICE ---------- */
+
+.price {
+    margin-top: 1rem;
+
+    color: var(--orange-dark);
+
+    font-size: 1.25rem;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   FORM
+   ========================================= */
+
+.form-container form {
+    display: grid;
+
+    gap: 0.35rem;
+}
+
+
+/* ---------- LABELS ---------- */
+
+label {
+    margin-top: 0.8rem;
+
+    font-weight: 700;
+}
+
+
+/* ---------- FORM INPUTS ---------- */
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 0.75rem;
+
+    border: 1px solid #cfc4ba;
+    border-radius: 0.4rem;
+
+    background-color: var(--white);
+    color: var(--text);
+
+    font: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--orange-dark);
+}
+
+input:invalid:not(:placeholder-shown),
+textarea:invalid:not(:placeholder-shown) {
+    border-color: #b3261e;
+}
+
+
+/* ---------- TEXTAREA ---------- */
+
+textarea {
+    min-height: 9rem;
+
+    resize: vertical;
+}
+
+
+/* ---------- BUTTON ---------- */
+
+button {
+    justify-self: start;
+
+    margin-top: 1rem;
+
+    padding: 0.75rem 1.4rem;
+
+    border: 0;
+    border-radius: 0.4rem;
+
+    background-color: var(--brown);
+    color: var(--white);
+
+    font: inherit;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--orange-dark);
+
+    transform: translateY(-0.1rem);
+}
+
+button:active {
+    background-color: var(--brown-dark);
+
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   CONTACT PAGE
+   ========================================= */
+
+.contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+
+/* ---------- CONTACT CARD ---------- */
+
+.contact-card {
+    padding: 1.25rem;
+
+    background-color: var(--cream);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.contact-card:first-child {
+    border-left: 0.3rem solid var(--orange-dark);
+}
+
+.contact-card a {
+    font-weight: 700;
+}
+
+
+/* ---------- MAP ---------- */
+
+.map-container iframe {
+    width: 100%;
+
+    height: clamp(18rem, 45vw, 25rem);
+
+    border: 0;
+
+    border-radius: 0.5rem;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.site-footer {
+    margin-top: 1rem;
+
+    padding: 1.5rem 5%;
+
+    background-color: var(--brown);
+
+    color: var(--white);
+
+    text-align: center;
+}
+
+
+/* =========================================
+   TABLET RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 55rem) {
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .logo {
+        font-size: 1.6rem;
+    }
+
+    .header-container {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .site-nav ul {
+        justify-content: flex-start;
+    }
+
+    .grid,
+    .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 38rem) {
+
+    body {
+        font-size: 0.98rem;
+        line-height: 1.5;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    main {
+        width: min(92%, 70rem);
+
+        padding-top: 1rem;
+    }
+
+    .site-header {
+        padding: 0.9rem 4%;
+    }
+
+    /* Mobile navigation: tap-friendly grid */
+    .site-nav,
+    .site-nav ul {
+        width: 100%;
+    }
+
+    .site-nav ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.25rem;
+    }
+
+    .site-nav a {
+        padding: 0.4rem 0.5rem;
+
+        background-color: rgba(255, 255, 255, 0.08);
+
+        font-size: 0.92rem;
+        text-align: center;
+    }
+
+    .grid,
+    .products,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero img {
+        height: 15rem;
+    }
+
+    .product-card img {
+        height: 13rem;
+    }
+
+    .price {
+        font-size: 1.15rem;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   PART 3 ADDITIONS
+   (toolbar, lightbox, accordion, map, form
+   feedback, animation, back-to-top)
+   ========================================= */
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* ---------- PRODUCT TOOLBAR ---------- */
+
+.toolbar {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 1rem;
+
+    margin-bottom: 1.25rem;
+    padding: 1.25rem;
+
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+}
+
+.toolbar label {
+    display: block;
+    margin: 0 0 0.3rem;
+}
+
+.result-count,
+.no-results,
+.noscript-note {
+    margin-bottom: 1rem;
+
+    font-weight: 700;
+    color: var(--brown);
+}
+
+.product-card .meta {
+    color: var(--orange-dark);
+
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.product-card {
+    animation: card-in 0.35s ease both;
+}
+
+@keyframes card-in {
+    from {
+        opacity: 0;
+        transform: translateY(0.6rem);
+    }
+}
+
+img[data-lightbox] {
+    cursor: zoom-in;
+}
+
+/* ---------- LIGHTBOX ---------- */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+
+    padding: 1rem;
+
+    background-color: rgba(30, 16, 9, 0.9);
+}
+
+.lightbox[hidden] {
+    display: none;
+}
+
+.lightbox img {
+    max-width: 92vw;
+    max-height: 78vh;
+    width: auto;
+
+    border-radius: var(--radius);
+}
+
+.lightbox-caption {
+    color: var(--white);
+    text-align: center;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    width: 2.75rem;
+    height: 2.75rem;
+
+    margin: 0;
+    padding: 0;
+
+    font-size: 1.75rem;
+    line-height: 1;
+}
+
+/* ---------- ACCORDION ---------- */
+
+.accordion h3 {
+    margin: 0;
+}
+
+.accordion-item+.accordion-item {
+    margin-top: 0.5rem;
+}
+
+.accordion-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    width: 100%;
+    margin: 0;
+
+    background-color: var(--cream);
+    color: var(--brown);
+
+    border: 1px solid var(--border);
+
+    text-align: left;
+}
+
+.accordion-trigger::after {
+    content: "+";
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.accordion-trigger[aria-expanded="true"]::after {
+    content: "\2212";
+}
+
+.accordion-trigger:hover {
+    background-color: var(--border);
+    transform: none;
+}
+
+.accordion-panel {
+    padding: 1rem 1.25rem;
+
+    border: 1px solid var(--border);
+    border-top: 0;
+    border-radius: 0 0 0.4rem 0.4rem;
+}
+
+/* ---------- MAP ---------- */
+
+#map {
+    width: 100%;
+    height: clamp(18rem, 45vw, 25rem);
+
+    border-radius: 0.5rem;
+    z-index: 1;
+}
+
+.map-link {
+    margin-top: 0.75rem;
+}
+
+/* ---------- FORM FEEDBACK ---------- */
+
+.form-error {
+    margin: 0;
+
+    color: #b3261e;
+
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+.form-error:empty {
+    display: none;
+}
+
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+    border-color: #b3261e;
+    border-width: 2px;
+}
+
+.char-count {
+    color: #5c5047;
+    font-size: 0.9rem;
+}
+
+.form-status {
+    margin-top: 1rem;
+    font-weight: 700;
+}
+
+.form-status:empty {
+    display: none;
+}
+
+.form-status.success {
+    color: #1b6b3a;
+}
+
+.form-status.error {
+    color: #b3261e;
+}
+
+.result-card {
+    margin-top: 1.25rem;
+    padding: 1.25rem;
+
+    background-color: var(--cream);
+
+    border: 1px solid var(--border);
+    border-left: 0.3rem solid var(--orange-dark);
+    border-radius: var(--radius);
+}
+
+.result-card.ok {
+    border-left-color: #1b6b3a;
+}
+
+.result-card.warn {
+    border-left-color: #b3261e;
+}
+
+.result-card[hidden] {
+    display: none;
+}
+
+.result-card ul {
+    margin: 0.5rem 0 0.75rem 1.25rem;
+}
+
+.email-preview {
+    margin-block: 0.75rem;
+    padding: 0.75rem;
+
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: 0.4rem;
+
+    font: inherit;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.button-link {
+    display: inline-block;
+
+    padding: 0.75rem 1.4rem;
+
+    background-color: var(--brown);
+    color: var(--white);
+
+    border-radius: 0.4rem;
+
+    font-weight: 700;
+    text-decoration: none;
+}
+
+main a.button-link:visited,
+main a.button-link:hover {
+    color: var(--white);
+}
+
+.button-link:hover {
+    background-color: var(--orange-dark);
+}
+
+.contact-container,
+.form-container {
+    margin-block: 1.5rem;
+}
+
+/* ---------- SCROLL REVEAL ---------- */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(1rem);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* ---------- BACK TO TOP ---------- */
+
+.back-to-top {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 50;
+
+    width: 2.75rem;
+    height: 2.75rem;
+
+    margin: 0;
+    padding: 0;
+
+    font-size: 1.4rem;
+    line-height: 1;
+
+    box-shadow: var(--shadow);
+}
+
+.back-to-top[hidden] {
+    display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .product-card,
+    .reveal {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@media (max-width: 55rem) {
+    .toolbar {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .toolbar>div:first-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 38rem) {
+    .toolbar {
+        grid-template-columns: 1fr;
+    }
+}
